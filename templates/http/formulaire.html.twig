@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% if erreur is not empty %}
+        <p style="color: red">{{ erreur }}</p>
+    {% endif %}
+
+    <form method="post">
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="email">
+        </div>
+        <div>
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit">
+            Envoyer
+        </button>
+    </form>
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
