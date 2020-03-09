@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table border="" class="table"><thead >
+    <tr>
+        <th>Id</th>
+        <th>Pseudo</th>
+        <th>Date de naissance</th>
+        <th>Email</th>
+    </tr>
+    </thead><tbody >
+    {% for elements in members  %}
+        <tr>
+            <td>{{ elements.id }}</td>
+            <td>{{ elements.pseudo }}</td>
+            <td>{{ elements.birthdate ? elements.birthdate|date('d/m/Y') }}</td>
+            <td>{{ elements.email }}</td>
+        </tr>
+    {% endfor %}
+    </tbody></table>
+
+{% endblock %}
+
+
+

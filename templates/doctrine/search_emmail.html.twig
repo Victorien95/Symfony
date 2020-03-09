@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <form action="" method="get">
+        <label for="email">Email à trouver</label>
+        <input type="email" name="email" id="email" placeholder="Email">
+        <button type="submit">Cherhcer</button>
+    </form>
+
+    {#  Si il y a une recherche  #}
+    {% if member is defined %}
+        {% if member is not null %}
+            <p>Le membre est {{ member.pseudo }}</p>
+        {% else %}
+            <p>Aucun membre avec cet email</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+

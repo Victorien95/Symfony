@@ -8,6 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * Cette classe correspond à une table en bdd :
  *
  * @ORM\Entity(repositoryClass="App\Repository\MemberRepository")
+ *
+ * Pour ajouter un index de performance
+ * @ORM\Table(indexes={@ORM\Index(name="pseudo_idx", columns={"pseudo"})})
  */
 class Member
 {
@@ -24,20 +27,26 @@ class Member
     private $id;
 
     /**
+     * c'est un varchar(20) en bdd
      * @ORM\Column(type="string", length=20)
      */
     private $pseudo;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * c'est un varchar(255) en bdd et unique
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $email;
 
     /**
+     * c'est une date qui peut être null (préciser null si oui si non null pas la peine de préciser)
      * @ORM\Column(type="date", nullable=true)
      */
     private $birthdate;
 
+    /*
+     * Pas de setter pour l'id car auto-incrémente
+     */
     public function getId(): ?int
     {
         return $this->id;

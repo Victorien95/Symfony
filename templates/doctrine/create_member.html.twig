@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <form action="" method="post">
+        <div>
+            <label for="pseudo">Pseudo</label>
+            <input type="text" name="pseudo">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="email">
+        </div>
+        <div>
+            <label for="birthdate">Date de naissance</label>
+            <input type="date" name="birthdate">
+        </div>
+        <button type="submit">Enregistrer</button>
+    </form>
+{% endblock %}
+
+
+
